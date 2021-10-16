@@ -1,0 +1,16 @@
+<div class="row userList" *ngFor="let data of userData.data">
+  <div class="col-md-4">
+    <img [src]="data.avatar" class="w-100 img-fluid" alt="userImage" />
+  </div>
+  <div class="col-md-8">
+    <p>ID : {{ data.id }}</p>
+    <p>Name : {{ data.first_name }} {{ data.last_name }}</p>
+    <p>Email : {{ data.email }}</p>
+  </div>
+</div>
+<div
+  class="row text-center"
+  *ngFor="let n of numSequence(userData.total_pages); let i = index"
+>
+  <button class="pagination" (click)="getData(i + 1)">{{ i + 1 }}</button>
+</div>
